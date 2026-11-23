@@ -1,0 +1,150 @@
+@layer theme {
+  [data-theme="comic"] {
+    .stack-sequence { background:var(--c-panel-alt); }
+    .stack-seam span { border-top-color:rgb(23 23 27 / .56); }
+    .about-edge {
+      height:4px;
+      background:var(--c-fg);
+      box-shadow:0 3px var(--c-highlight), 0 4px var(--c-fg);
+    }
+    .about-edge::after {
+      content:"";
+      position:absolute;
+      inset:8px 0 auto;
+      height:6px;
+      background:radial-gradient(circle at 1px 1px, var(--c-fg) 1px, transparent 1.2px) 0 0 / 4px 4px;
+      mask-image:linear-gradient(90deg,#000,transparent 34%,transparent 69%,#0009);
+      opacity:.5;
+    }
+    .stack-panel__dim { background:#4b3022; opacity:calc(var(--stack-dim, 0) * .52); }
+    .placeholder-label {
+      color:var(--c-fg);
+      background:var(--c-panel-alt);
+      border-color:var(--c-fg);
+    }
+
+    /* Cover artwork sits behind the shared portrait and text. */
+    .hero-ambience {
+      background:radial-gradient(ellipse at 50% 66%, var(--c-panel) 10%, transparent 65%);
+    }
+    .hero-ambience__glow,.hero-ambience__contours,.hero-ambience__vignette { display:none; }
+    /* Register the print to the same bottom-aligned canvas as the photograph. */
+    .hero-ambience__print {
+      position:absolute;
+      width:var(--hero-portrait-width);
+      aspect-ratio:2048 / 1364;
+      bottom:0;
+      left:50%;
+      transform:translateX(-50%);
+      mask-image:radial-gradient(ellipse 14% 21% at 49% 46%, transparent 62%, #000);
+    }
+    .hero-ambience__print::before,.hero-ambience__print::after {
+      content:"";
+      position:absolute;
+      inset:0;
+    }
+    .hero-ambience__print::before {
+      background:repeating-conic-gradient(from 8deg at 54% 67%,
+        transparent 0deg 10deg, var(--c-blue) 10.05deg 10.24deg,
+        transparent 10.35deg 25deg, var(--c-blue) 25.1deg 25.48deg, transparent 25.6deg 36deg);
+      mask-image:radial-gradient(ellipse 40% 43% at 53% 70%, #000 30%, transparent);
+      opacity:.29;
+    }
+    .hero-ambience__print::after {
+      background:radial-gradient(circle, var(--c-fg) 1px, transparent 1.3px) 0 0 / 5px 5px;
+      mask-image:radial-gradient(ellipse 13% 28% at 38% 77%, #000 20%, transparent),
+        radial-gradient(ellipse 14% 24% at 65% 69%, #000 24%, transparent);
+      opacity:.36;
+    }
+    .hero__issue {
+      position:absolute;
+      inset:calc(var(--header-height) + 9px) auto auto var(--page-pad);
+      z-index:4;
+      display:inline-flex;
+      padding:2px 7px;
+      background:var(--c-highlight);
+      color:var(--c-fg);
+      outline:1px solid var(--c-fg);
+      font:500 .6875rem/1.35 var(--font-mono);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      pointer-events:none;
+    }
+    .hero__details { background:var(--c-panel); border-color:var(--c-fg); }
+    .button--primary {
+      background:var(--c-highlight);
+      color:var(--c-fg);
+      border-color:var(--c-fg);
+      box-shadow:var(--comic-shadow);
+    }
+    .button--primary:hover { background:#f8d96d; }
+    .button--outline { background:var(--c-panel); border-color:var(--c-fg); }
+
+    /* Panel rules and labels preserve the existing content and box dimensions. */
+    .about,.activity { background:var(--c-bg); }
+    .projects,.experience,.contact { background:var(--c-panel-alt); }
+    .projects__italic,.experience__title .display-heading > span,.contact__main h2 > span {
+      color:var(--c-red);
+    }
+    .about > .section-label::after {
+      content:"02";
+      margin-inline-start:10px;
+      padding:2px 5px;
+      background:var(--c-highlight);
+      color:var(--c-fg);
+      outline:1px solid var(--c-fg);
+    }
+    .about__example { border-color:var(--c-red); box-shadow:inset 2px 0 var(--c-red); }
+    .about__example .text-link { color:var(--c-red); }
+    .projects__intro p,.project-card p,.experience__row p,.experience__date,
+    .activity__card-bottom p,.contact__socials > span,.site-footer__bottom { color:var(--c-muted); }
+    .projects__head { border-bottom:2px solid var(--c-fg); }
+    .project-card { background:var(--c-panel); border-color:var(--c-fg); box-shadow:var(--comic-shadow); }
+    .project-card__art { outline:1px solid var(--c-fg); outline-offset:-1px; }
+    .project-card__case > div { border-color:var(--c-border); }
+    .project-card__art { background:var(--c-panel-alt); }
+    .project-card__art .artwork { color:#f4f1ee; }
+    .project-card__number {
+      display:block;
+      position:absolute;
+      z-index:1;
+      inset:10px auto auto 10px;
+      padding:4px 8px;
+      background:var(--c-highlight);
+      color:var(--c-fg);
+      border:1px solid var(--c-fg);
+      font:500 .8125rem/1 var(--font-mono);
+      pointer-events:none;
+    }
+    .project-card:focus-visible .artwork { transform:scale(1.045); }
+    .activity__card,.activity__card:nth-child(2) {
+      background:var(--c-panel);
+      border-color:var(--c-fg);
+      box-shadow:var(--comic-shadow);
+    }
+    .activity__card-icon,.contact__email { color:var(--c-red); }
+    .activity__card-icon,.status-pill {
+      border-color:var(--c-fg);
+      background:var(--c-bg);
+    }
+    .status-pill { color:var(--c-fg); }
+    .experience__timeline,.experience__row,.contact__bottom,.site-footer,.site-footer__bottom {
+      border-color:var(--c-fg);
+    }
+    .contact__email svg { transition:transform .20s var(--ease-exit); }
+    .contact__email:hover { gap:20px; }
+    .contact__email:hover svg { transform:translate(3px,-3px); }
+    .site-footer { background:var(--c-bg); }
+
+    @media (min-width:600px) and (orientation:landscape) and (max-height:680px) {
+      .hero__issue { inset-inline:auto var(--page-pad); }
+    }
+    @media (max-width:1023px) {
+      .hero__details { background:transparent; }
+    }
+    @media (max-width:767px) {
+      .hero-ambience__print::after { background-size:4px 4px; }
+      .contact__email:hover { gap:9px; }
+    }
+  }
+}

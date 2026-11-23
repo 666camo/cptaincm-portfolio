@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      try {
+        if (localStorage.getItem('cptaincm-theme') === 'comic') {
+          document.documentElement.dataset.theme = 'comic';
+        }
+      } catch {
+        // Dark remains the default if storage is unavailable.
+      }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b10" />
+    <meta name="description" content="cptaincm. — Creative full stack developer portfolio. Building thoughtful digital experiences with code and curiosity." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="cptaincm. — Creative Developer" />
+    <meta property="og:description" content="Crafting digital experiences. Explore selected work, approach, and ideas." />
+    <title>cptaincm. — Creative Full Stack Developer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

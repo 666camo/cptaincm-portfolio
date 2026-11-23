@@ -1,0 +1,13 @@
+Technology logo sources
+
+The SVGs in assets/tech/ are distributed locally. The logo marks belong to their respective owners and identify technologies used in the portfolio.
+
+Java (java.svg)
+Devicon v2.17.0, icons/java/java-plain.svg
+https://github.com/devicons/devicon/tree/v2.17.0/icons/java
+See devicon.txt for the MIT license.
+
+All other SVG files in assets/tech/
+Simple Icons 12.4.0, icons/<filename>.svg
+https://github.com/simple-icons/simple-icons/tree/12.4.0/icons
+See simple-icons.txt for the collection's CC0 dedication. Brand-specific information is maintained in the collection's _data/simple-icons.json.

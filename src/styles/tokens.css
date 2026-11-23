@@ -1,0 +1,69 @@
+:root {
+  --c-button-red: #bc2439;
+  --c-button-red-hover: #a91c32;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('@fontsource-variable/oswald/files/oswald-latin-wght-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url('@fontsource/dm-mono/files/dm-mono-latin-500-normal.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --c-bg: #0b0b10;
+  --c-panel: #121319;
+  --c-panel-alt: #171820;
+  --c-fg: #f4f1ee;
+  --c-muted: #b6b6c4;
+  --c-soft: #858693;
+  --c-brand: #e62439;
+  --c-red: #ff5266;
+  --c-blue: #182747;
+  --hero-crimson: #671630;
+  --hero-midnight: #1c345f;
+  --web-red: rgba(162, 91, 120, .42);
+  --web-blue: rgba(107, 132, 184, .38);
+  --c-border: rgba(244, 241, 238, .14);
+  --font-display: 'Oswald', 'Arial Narrow', Impact, sans-serif;
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'DM Mono', Consolas, monospace;
+  --page-pad: clamp(26px, 5.3vw, 116px);
+  --header-height: 86px;
+  --ease-exit: cubic-bezier(.25,.7,.2,1);
+  --ease-cinematic: cubic-bezier(.22,1,.36,1);
+}
+
+:root[data-theme="comic"] {
+  color-scheme: light;
+  --c-bg: #f5eedc;
+  --c-panel: #fff9ec;
+  --c-panel-alt: #f0e4c8;
+  --c-fg: #17171b;
+  --c-muted: #514b4a;
+  --c-soft: #514b4a;
+  --c-brand: #c41f34;
+  --c-red: #c41f34;
+  --c-blue: #234c77;
+  --c-highlight: #f2c94c;
+  --c-border: #a49a84;
+  --comic-shadow: 3px 4px 0 var(--c-fg);
+}
